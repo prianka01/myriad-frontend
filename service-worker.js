@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/myriad-frontend/precache-manifest.2bcc15cd042b466e91bade573ca190db.js"
+  "/myriad-frontend/precache-manifest.71882c551b2ac31ddf58c3b68d47237c.js"
 );
 
 self.addEventListener('message', (event) => {
