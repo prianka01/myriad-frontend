@@ -24,10 +24,10 @@ class Diary extends React.Component {
 
 	componentDidMount() {
 		this.getDataFromDb();
-		// if (!this.state.intervalIsSet) {
-		// 	let interval = setInterval(this.getDataFromDb, 1000);
-		// 	this.setState({ intervalIsSet: interval });
-		// }
+		if (!this.state.intervalIsSet) {
+			let interval = setInterval(this.getDataFromDb, 1000);
+			this.setState({ intervalIsSet: interval });
+		}
 	}
 	getDataFromDb = async () => {
 		let result = await getData();
