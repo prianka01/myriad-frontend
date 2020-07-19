@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f8ab8b19761c0a5b678c39480210a1eb",
+    "revision": "4e6e9fb4736e59dc205276840a86505a",
     "url": "/myriad-frontend/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/myriad-frontend/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "ef23bc072efb23b90234",
+    "revision": "f45659bcb8224425d08d",
     "url": "/myriad-frontend/static/css/main.f5e9fd5a.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/myriad-frontend/static/js/2.715839b1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ef23bc072efb23b90234",
-    "url": "/myriad-frontend/static/js/main.147cac60.chunk.js"
+    "revision": "f45659bcb8224425d08d",
+    "url": "/myriad-frontend/static/js/main.1b307e70.chunk.js"
   },
   {
     "revision": "316d1306693e2dda409c",

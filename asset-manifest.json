@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/myriad-frontend/static/css/main.f5e9fd5a.chunk.css",
-    "main.js": "/myriad-frontend/static/js/main.147cac60.chunk.js",
-    "main.js.map": "/myriad-frontend/static/js/main.147cac60.chunk.js.map",
+    "main.js": "/myriad-frontend/static/js/main.1b307e70.chunk.js",
+    "main.js.map": "/myriad-frontend/static/js/main.1b307e70.chunk.js.map",
     "runtime-main.js": "/myriad-frontend/static/js/runtime-main.80537a3d.js",
     "runtime-main.js.map": "/myriad-frontend/static/js/runtime-main.80537a3d.js.map",
     "static/css/2.de424728.chunk.css": "/myriad-frontend/static/css/2.de424728.chunk.css",
     "static/js/2.715839b1.chunk.js": "/myriad-frontend/static/js/2.715839b1.chunk.js",
     "static/js/2.715839b1.chunk.js.map": "/myriad-frontend/static/js/2.715839b1.chunk.js.map",
     "index.html": "/myriad-frontend/index.html",
-    "precache-manifest.71882c551b2ac31ddf58c3b68d47237c.js": "/myriad-frontend/precache-manifest.71882c551b2ac31ddf58c3b68d47237c.js",
+    "precache-manifest.f51dce855caadb1b2a1582530926f9a2.js": "/myriad-frontend/precache-manifest.f51dce855caadb1b2a1582530926f9a2.js",
     "service-worker.js": "/myriad-frontend/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/myriad-frontend/static/css/2.de424728.chunk.css.map",
     "static/css/main.f5e9fd5a.chunk.css.map": "/myriad-frontend/static/css/main.f5e9fd5a.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.de424728.chunk.css",
     "static/js/2.715839b1.chunk.js",
     "static/css/main.f5e9fd5a.chunk.css",
-    "static/js/main.147cac60.chunk.js"
+    "static/js/main.1b307e70.chunk.js"
   ]
 }
