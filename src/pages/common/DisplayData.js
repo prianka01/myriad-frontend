@@ -50,7 +50,16 @@ class DisplayData extends React.Component {
 							<div id="card" class="card text-center" key={dat._id}>
 								<div class="card-body">
 									<h5 class="card-title">{dat.title}</h5>
-									<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+									<h6 class="card-subtitle mb-2 text-muted">
+										{new Intl.DateTimeFormat("en-US", {
+											year: "numeric",
+											month: "long",
+											day: "2-digit",
+											hour: "numeric",
+											minute: "numeric",
+											hour12: true,
+										}).format(Date.parse(dat.createdAt))}
+									</h6>
 									<p id="text" class="card-text">
 										{dat.message}
 									</p>
@@ -92,8 +101,6 @@ class DisplayData extends React.Component {
 										)}
 								</div>
 							</div>
-							//  <br />
-							// </div>
 					  ))}
 			</div>
 		);

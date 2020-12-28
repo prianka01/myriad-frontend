@@ -48,7 +48,6 @@ class Diary extends React.Component {
 	};
 	render() {
 		const input = this.state.input_text;
-		const data = this.state.data;
 		const title = this.state.input_title;
 		return (
 			<div id="diary">
