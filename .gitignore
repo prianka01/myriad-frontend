@@ -10,12 +10,12 @@
     
 # production
 /build
-/static
-.asset-manifest.json
-.index.html
-.precache-manifest.2f16f8396459ea304d0faac5eb917e2c.js
-.service-worker.js
-.config.yml
+static
+asset-manifest.json
+index.html
+precache-manifest.2f16f8396459ea304d0faac5eb917e2c.js
+service-worker.js
+_config.yml
 # misc
 .DS_Store
 .env.local
