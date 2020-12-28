@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/myriad-frontend/static/css/main.70d011f0.chunk.css",
+    "main.js": "/myriad-frontend/static/js/main.318fccdb.chunk.js",
+    "main.js.map": "/myriad-frontend/static/js/main.318fccdb.chunk.js.map",
+    "runtime-main.js": "/myriad-frontend/static/js/runtime-main.80537a3d.js",
+    "runtime-main.js.map": "/myriad-frontend/static/js/runtime-main.80537a3d.js.map",
+    "static/css/2.de424728.chunk.css": "/myriad-frontend/static/css/2.de424728.chunk.css",
+    "static/js/2.715839b1.chunk.js": "/myriad-frontend/static/js/2.715839b1.chunk.js",
+    "static/js/2.715839b1.chunk.js.map": "/myriad-frontend/static/js/2.715839b1.chunk.js.map",
+    "index.html": "/myriad-frontend/index.html",
+    "precache-manifest.eb675555aad21e4a2414ef8e6abb7b99.js": "/myriad-frontend/precache-manifest.eb675555aad21e4a2414ef8e6abb7b99.js",
+    "service-worker.js": "/myriad-frontend/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/myriad-frontend/static/css/2.de424728.chunk.css.map",
+    "static/css/main.70d011f0.chunk.css.map": "/myriad-frontend/static/css/main.70d011f0.chunk.css.map",
+    "static/js/2.715839b1.chunk.js.LICENSE.txt": "/myriad-frontend/static/js/2.715839b1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80537a3d.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.715839b1.chunk.js",
+    "static/css/main.70d011f0.chunk.css",
+    "static/js/main.318fccdb.chunk.js"
+  ]
+}
