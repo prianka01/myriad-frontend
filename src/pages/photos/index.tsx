@@ -10,16 +10,13 @@ const Photos = () => {
 		input_title: "",
 	});
 
-	useEffect(() => {
-		let a = "";
-		let b = 1;
-		console.log(a);
-		getDataFromDb();
-		if (!state.intervalIsSet) {
-			// let interval = setInterval(getDataFromDb, 1000);
-			setState({ ...state, intervalIsSet: false });
-		}
-	});
+	// useEffect(() => {
+	// 	getDataFromDb();
+	// 	if (!state.intervalIsSet) {
+	// 		// let interval = setInterval(getDataFromDb, 1000);
+	// 		setState({ ...state, intervalIsSet: false });
+	// 	}
+	// });
 
 	const getDataFromDb = async () => {
 		let result = await getData();

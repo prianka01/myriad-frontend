@@ -1,8 +1,7 @@
 import React from "react";
-const Contact = ({ children }) => (
-  <div>
-    <p>Hello in contact component</p>
-    <div>{children}</div>
-  </div>
+const Contact = () => (
+	<div>
+		<p>Hello in contact component</p>
+	</div>
 );
 export default Contact;
