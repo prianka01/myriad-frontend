@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { putData, getData } from "../api";
+import { putTextData, getTextData } from "../api";
 import DisplayData from "./common/DisplayData";
 const Diary = () => {
 	const [state, setState] = React.useState({
@@ -16,7 +16,7 @@ const Diary = () => {
 		setState({ ...state, input_title: e.target.value });
 	};
 	const getDataFromDb = async () => {
-		let result = await getData();
+		let result = await getTextData();
 		setState({ ...state, data: result });
 	};
 	useEffect(() => {
@@ -32,7 +32,7 @@ const Diary = () => {
 		while (currentIds.includes(idToBeAdded)) {
 			++idToBeAdded;
 		}
-		return putData(message, title, idToBeAdded);
+		return putTextData(message, title, idToBeAdded);
 	};
 	const onClickAddData = async () => {
 		await putDataToDB(state.input_text, state.input_title);

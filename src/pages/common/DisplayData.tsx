@@ -1,5 +1,5 @@
 import React from "react";
-import { deleteData, updateData } from "../../api";
+import { deleteTextData, updateData } from "../../api";
 const DisplayData = (props: any) => {
 	const [state, setState] = React.useState({
 		updated_text: "",
@@ -14,7 +14,7 @@ const DisplayData = (props: any) => {
 				objIdToDelete = dat._id;
 			}
 		});
-		await deleteData(objIdToDelete);
+		await deleteTextData(objIdToDelete);
 		props.reRender();
 	};
 	const onClickUpdateData = (id: any, message: string) => {
