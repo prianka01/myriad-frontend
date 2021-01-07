@@ -135,18 +135,19 @@ const Dropzone = (props) => {
     modalImageRef.current.style.backgroundImage = "none";
   };
 
-  const uploadFiles = async (id) => {
+  const uploadFiles = async () => {
     uploadModalRef.current.style.display = "block";
     uploadRef.current.innerHTML = "File(s) Uploading...";
-    for (let i = 0; i < validFiles.length; i++) {
+    const n = validFiles.length;
+    for (let i = 0; i < n; i++) {
       const formData = new FormData();
       formData.append("image", validFiles[i]);
-      formData.append("id", id + i);
-      axios
+      await axios
         .post("http://localhost:3001/api/putImageData", formData, {
           onUploadProgress: (progressEvent) => {
             const uploadPercentage = Math.floor(
-              (progressEvent.loaded / progressEvent.total) * 100
+              (progressEvent.loaded / progressEvent.total) *
+                ((100 * (i + 1)) / n)
             );
             progressRef.current.innerHTML = `${uploadPercentage}%`;
             progressRef.current.style.width = `${uploadPercentage}%`;
@@ -164,6 +165,7 @@ const Dropzone = (props) => {
           uploadRef.current.innerHTML = `<span class="error">Error Uploading File(s)</span>`;
           progressRef.current.style.backgroundColor = "red";
         });
+      props.reRender();
     }
   };
 
@@ -175,10 +177,7 @@ const Dropzone = (props) => {
     <>
       <div className="container">
         {unsupportedFiles.length === 0 && validFiles.length ? (
-          <button
-            className="file-upload-btn"
-            onClick={() => uploadFiles(props.idToBeContinued)}
-          >
+          <button className="file-upload-btn" onClick={() => uploadFiles()}>
             Upload Files
           </button>
         ) : (

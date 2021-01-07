@@ -1,44 +1,68 @@
-import React, { useEffect } from "react";
-import { putImageData, getImageData, deleteImageData } from "../../api";
+import React, { useEffect, useRef } from "react";
+import { getImageData, deleteImageData } from "../../api";
 import DropZone from "./Dropzone/dropzone";
 const Photos = () => {
   const [state, setState] = React.useState({
     data: [],
     reRender: 1,
     input_title: "",
-    numberOfIDs: 0,
   });
+
+  const reRender = () => {
+    setState({ ...state, reRender: 1 });
+  };
+  const getDataFromDb = async () => {
+    let result = await getImageData();
+    setState({ ...state, data: result });
+  };
+  const onClickDeleteData = async (idTodelete: any) => {
+    let objIdToDelete = null;
+    state.data.forEach((dat: any) => {
+      if (dat._id === idTodelete) {
+        objIdToDelete = dat._id;
+      }
+    });
+    await deleteImageData(objIdToDelete);
+    reRender();
+    // let result = await getImageData();
+    // setState({ ...state, data: result });
+  };
   useEffect(() => {
     if (state.reRender === 1) {
       getDataFromDb();
       state.reRender = 0;
     }
   });
-  const getDataFromDb = async () => {
-    let result = await getImageData();
-    setState({ ...state, data: result });
-  };
-  const data = state.data;
+
   return (
     <div>
       <p className="title">React Drag and Drop Image Upload</p>
       <div className="content">
-        <DropZone idToBeContinued={state.numberOfIDs} />
+        <DropZone reRender={reRender} getDataFromDb={getDataFromDb} />
       </div>
       <div id="card-columns" className="card-columns">
-        {data.length <= 0
+        {state.data.length <= 0
           ? "No images"
-          : data.map((image: any) => (
-              <div className="card-body" key={image._id}>
-                <img
-                  id="image"
-                  src={
-                    "data:" +
-                    image.img.contentType +
-                    ";base64," +
-                    Buffer.from(image.img.data.data).toString("base64")
-                  }
-                />
+          : state.data.map((image: any) => (
+              <div id="card" className="card text-center" key={image._id}>
+                <div className="card-body">
+                  <img
+                    id="image"
+                    src={
+                      "data:" +
+                      image.img.contentType +
+                      ";base64," +
+                      Buffer.from(image.img.data.data).toString("base64")
+                    }
+                  />
+                </div>
+                <button
+                  id="button1"
+                  className="card-link"
+                  onClick={() => onClickDeleteData(image._id)}
+                >
+                  DELETE NOTE
+                </button>
               </div>
             ))}
       </div>
