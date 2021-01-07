@@ -42,7 +42,7 @@ export const putImageData = (fileToBeAdded, idToBeAdded) => {
 export const deleteImageData = (idToBeDeleted) => {
   return axios.delete("http://localhost:3001/api/deleteImageData", {
     data: {
-      id: idToBeDeleted,
+      _id: idToBeDeleted,
     },
   });
 };
