@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { getImageData, deleteImageData } from "../../api";
 import DropZone from "./Dropzone/dropzone";
+import ImageDisplay from "./imageDisplay";
 const Photos = () => {
   const [state, setState] = React.useState({
     data: [],
@@ -40,32 +41,7 @@ const Photos = () => {
       <div className="content">
         <DropZone reRender={reRender} getDataFromDb={getDataFromDb} />
       </div>
-      <div id="card-columns" className="card-columns">
-        {state.data.length <= 0
-          ? "No images"
-          : state.data.map((image: any) => (
-              <div id="card" className="card text-center" key={image._id}>
-                <div className="card-body">
-                  <img
-                    id="image"
-                    src={
-                      "data:" +
-                      image.img.contentType +
-                      ";base64," +
-                      Buffer.from(image.img.data.data).toString("base64")
-                    }
-                  />
-                </div>
-                <button
-                  id="button1"
-                  className="card-link"
-                  onClick={() => onClickDeleteData(image._id)}
-                >
-                  DELETE NOTE
-                </button>
-              </div>
-            ))}
-      </div>
+      <ImageDisplay data={state.data} onClickDeleteData={onClickDeleteData} />
     </div>
   );
 };
