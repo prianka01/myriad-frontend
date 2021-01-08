@@ -34,20 +34,26 @@ export const updateData = (objIdToUpdate, updateToApply) => {
   );
 };
 export const putImageData = (fileToBeAdded, idToBeAdded) => {
-  return axios.post("http://localhost:3001/api/putImageData", {
-    id: idToBeAdded,
-    file: fileToBeAdded,
-  });
+  return axios.post(
+    "https://myriad-backend-images.herokuapp.com/api/putImageData",
+    {
+      id: idToBeAdded,
+      file: fileToBeAdded,
+    }
+  );
 };
 export const deleteImageData = (idToBeDeleted) => {
-  return axios.delete("http://localhost:3001/api/deleteImageData", {
-    data: {
-      _id: idToBeDeleted,
-    },
-  });
+  return axios.delete(
+    "https://myriad-backend-images.herokuapp.com/api/deleteImageData",
+    {
+      data: {
+        _id: idToBeDeleted,
+      },
+    }
+  );
 };
 export const getImageData = () => {
-  return fetch("http://localhost:3001/api/getImageData")
+  return fetch("https://myriad-backend-images.herokuapp.com/api/getImageData")
     .then((data) => data.json())
     .then((res) => res.data);
 };

@@ -143,24 +143,28 @@ const Dropzone = (props) => {
       const formData = new FormData();
       formData.append("image", validFiles[i]);
       await axios
-        .post("http://localhost:3001/api/putImageData", formData, {
-          onUploadProgress: (progressEvent) => {
-            const uploadPercentage = Math.floor(
-              (progressEvent.loaded / progressEvent.total) *
-                ((100 * (i + 1)) / n)
-            );
-            progressRef.current.innerHTML = `${uploadPercentage}%`;
-            progressRef.current.style.width = `${uploadPercentage}%`;
+        .post(
+          "https://myriad-backend-images.herokuapp.com/api/putImageData",
+          formData,
+          {
+            onUploadProgress: (progressEvent) => {
+              const uploadPercentage = Math.floor(
+                (progressEvent.loaded / progressEvent.total) *
+                  ((100 * (i + 1)) / n)
+              );
+              progressRef.current.innerHTML = `${uploadPercentage}%`;
+              progressRef.current.style.width = `${uploadPercentage}%`;
 
-            if (uploadPercentage === 100) {
-              uploadRef.current.innerHTML = "File(s) Uploaded";
-              validFiles.length = 0;
-              setValidFiles([...validFiles]);
-              setSelectedFiles([...validFiles]);
-              setUnsupportedFiles([...validFiles]);
-            }
-          },
-        })
+              if (uploadPercentage === 100) {
+                uploadRef.current.innerHTML = "File(s) Uploaded";
+                validFiles.length = 0;
+                setValidFiles([...validFiles]);
+                setSelectedFiles([...validFiles]);
+                setUnsupportedFiles([...validFiles]);
+              }
+            },
+          }
+        )
         .catch(() => {
           uploadRef.current.innerHTML = `<span class="error">Error Uploading File(s)</span>`;
           progressRef.current.style.backgroundColor = "red";
